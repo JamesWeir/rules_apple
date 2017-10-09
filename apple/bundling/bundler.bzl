@@ -464,7 +464,8 @@ def _process_and_sign_archive(ctx,
       executable=process_and_sign_script,
       mnemonic=mnemonic + "ProcessAndSign",
       progress_message="Processing and signing %s: %s" % (
-          progress_description, bundle_name)
+          progress_description, bundle_name),
+      no_sandbox=True # "security" tool requires this
   )
   return work_dir
 
